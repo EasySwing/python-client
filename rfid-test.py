@@ -1,4 +1,4 @@
-from rfid import RFID
+from rfid.rfid import RFID
 
 rdr = RFID()
 
