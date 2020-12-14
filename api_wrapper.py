@@ -14,3 +14,5 @@ class APIWrapper:
         except:
             return None
 
+    def new_club(self, club_details):
+        return
