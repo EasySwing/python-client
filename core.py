@@ -13,11 +13,13 @@ name_length = len(user.get('first_name'))
 out = "P8_8"
 GPIO.setup(out, GPIO.OUT)
 
+print(name_length, user.get('first_name'))
+
 for i in range(0, name_length):
     GPIO.output(out, GPIO.HIGH)
-    time.sleep(0.01)
+    time.sleep(0.1)
     GPIO.output(out, GPIO.LOW)
-    time.sleep(0.01)
+    time.sleep(0.1)
 
 
 # print(user.get('last_name'))
