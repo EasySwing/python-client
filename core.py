@@ -22,7 +22,7 @@ for i in range(0, name_length):
     time.sleep(0.1)
 
 
-# print(user.get('last_name'))
+print(user.get('last_name'))
 
-# for club in user.get('clubs'):
-#     print(club.get("name"), club.get("tee_height"), 'mm')
+for club in user.get('clubs'):
+    print(club.get("name"), club.get("tee_height"), 'mm')
