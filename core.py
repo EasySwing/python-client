@@ -8,4 +8,4 @@ user = api.sign_in(tag_uuid)
 print(user.get('first_name'))
 print(user.get('last_name'))
 for club in user.get('clubs'):
-    print(f'{club.get("name")} - {club.get("tee_height")}mm')
+    print(club.get("name"), club.get("tee_height"), 'mm')
