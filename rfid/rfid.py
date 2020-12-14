@@ -2,24 +2,15 @@ import threading
 
 RASPBERRY = object()
 BEAGLEBONE = object()
-board = RASPBERRY
-try:
-    # Try with Raspberry PI imports first
-    import spidev
-    import RPi.GPIO as GPIO
-    SPIClass = spidev.SpiDev
-    def_pin_rst = 22
-    def_pin_irq = 18
-    def_pin_mode = GPIO.BOARD
-except ImportError:
-    # If they failed, try with Beaglebone
-    import Adafruit_BBIO.SPI as SPI
-    import Adafruit_BBIO.GPIO as GPIO
-    SPIClass = SPI.SPI
-    board = BEAGLEBONE
-    def_pin_rst = "P9_23"
-    def_pin_irq = "P9_15"
-    def_pin_mode = None
+
+# If they failed, try with Beaglebone
+import Adafruit_BBIO.SPI as SPI
+import Adafruit_BBIO.GPIO as GPIO
+SPIClass = SPI.SPI
+board = BEAGLEBONE
+def_pin_rst = "P9_23"
+def_pin_irq = "P9_15"
+def_pin_mode = None
 
 class RFID(object):
     pin_rst = 22
